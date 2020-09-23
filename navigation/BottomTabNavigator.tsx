@@ -51,11 +51,10 @@ export default function BottomTabNavigator() {
         name="Resources"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color }) => (
             <TabBarIcon
               name={Platform.OS === "ios" ? "ios-link" : "md-link"}
               color={color}
-              focused={focused}
             />
           ),
         }}
@@ -64,11 +63,10 @@ export default function BottomTabNavigator() {
         name="Profile"
         component={TabThreeNavigator}
         options={{
-          tabBarIcon: ({ color, focused }) => (
+          tabBarIcon: ({ color }) => (
             <TabBarIcon
               name={Platform.OS === "ios" ? "ios-options" : "md-options"}
               color={color}
-              focused={focused}
             />
           ),
         }}
