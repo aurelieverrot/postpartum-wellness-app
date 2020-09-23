@@ -5,17 +5,16 @@ import * as React from "react";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
-import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
+
 import {
   BottomTabParamList,
   HomeParamList,
-  LinksParamList,
+  ResourcesParamList,
   ProfileParamList,
 } from "../types";
 import HomeScreen from "../screens/HomeScreen";
-// import SignInScreen from "../screens/SignInScreen";
-// import SignUpScreen from "../screens/SignUpScreen";
+import ResourcesScreen from "../screens/ResourcesScreen";
+import ProfileScreen from "../screens/ProfileScreen";
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export default function BottomTabNavigator() {
@@ -36,7 +35,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="Links"
+        name="Resources"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => (
@@ -65,30 +64,43 @@ function TabBarIcon(props: { name: string; color: string }) {
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<TabOneParamList>();
+const TabOneStack = createStackNavigator<HomeParamList>();
 
 function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="TabOneScreen"
+        name="HomeScreen"
         component={HomeScreen}
-        options={{ headerTitle: "HomeScreen" }}
+        options={{ headerTitle: "Home" }}
       />
     </TabOneStack.Navigator>
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const TabTwoStack = createStackNavigator<ResourcesParamList>();
 
 function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: "Tab Two Title" }}
+        name="ResourcesScreen"
+        component={ResourcesScreen}
+        options={{ headerTitle: "Resources" }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+const TabThreeStack = createStackNavigator<ProfileParamList>();
+
+function TabThreeNavigator() {
+  return (
+    <TabThreeStack.Navigator>
+      <TabThreeStack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{ headerTitle: "Profile" }}
+      />
+    </TabThreeStack.Navigator>
   );
 }

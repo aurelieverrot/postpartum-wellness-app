@@ -6,9 +6,9 @@ import {
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
 import { ColorSchemeName } from "react-native";
-import HomeScreen from "../screens/HomeScreen";
-import SignInScreen from "../screens/SignInScreen";
-import SignUpScreen from "../screens/SignUpScreen";
+// import HomeScreen from "../screens/HomeScreen";
+// import SignInScreen from "../screens/SignInScreen";
+// import SignUpScreen from "../screens/SignUpScreen";
 
 import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
