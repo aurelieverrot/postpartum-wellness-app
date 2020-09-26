@@ -33,7 +33,7 @@ export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.getStartedContainer}>
-        <Text style={styles.getStartedText}>Postpartum Wellness Signup</Text>
+        <Text style={styles.getStartedText}>Postpartum Wellness Profile</Text>
         <TextInput
           style={styles.textInput}
           mode="outlined"
@@ -64,7 +64,7 @@ export default function ProfileScreen() {
           mode="contained"
           onPress={() => console.log("submit")}
         >
-          Sign-Up!
+          Create My Profile!
         </Button>
       </View>
     </View>
